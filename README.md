@@ -4,7 +4,7 @@ dailyfresh mall based on B2C model
 > B2C(企业对个人的商业模式), 
 
 #### 技术栈
-& 编程语言
+^ 编程语言
 
 ####  开发环境
 
