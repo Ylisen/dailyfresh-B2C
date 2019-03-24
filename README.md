@@ -18,6 +18,8 @@ dailyfresh mall based on B2C model
 
 
 ####  主体模块
+－ 
+－ 
 
 
 ####  数据库表
