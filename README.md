@@ -3,6 +3,8 @@ dailyfresh mall based on B2C model
 基于B2C的天天生鲜商城  
 > B2C(企业对个人的商业模式), 
 
+#### 技术栈
+** 编程语言
 
 ####  开发环境
 
