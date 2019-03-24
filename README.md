@@ -12,7 +12,7 @@ dailyfresh mall based on B2C model
 #### 技术栈
 - 语言：Python3.* (Django)
 - 数据库: MySql、 redis
-- 分布式文件存储: FDFS
+- 分布式文件存储: FastDFS
 
 ####  开发环境
 
