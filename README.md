@@ -3,17 +3,18 @@ dailyfresh mall based on B2C model
 基于B2C的天天生鲜商城  
 > B2C(企业对个人的商业模式), 
 
+#### 技术架构
+
+
 #### 技术栈
-- 编程语言
+- 语言：Python3.*(Django)
+- 数据库: MySql, redis
+- 分布式文件存储: FDFS
 
 ####  开发环境
 
 
 ####  主体模块
-
-
-####  商城架构
-
 
 
 ####  数据库表
