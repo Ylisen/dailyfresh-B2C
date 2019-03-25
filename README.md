@@ -8,7 +8,8 @@ dailyfresh mall based on B2C model
 
 #### 技术架构
 * 开发架构
-项目采用BS结构,即Browser/Server(浏览器/服务器)结构,构建一个web的网站商城系统
+项目采用BS结构,即Browser/Server(浏览器/服务器)结构,构建一个web的网站商城系统, 其技术架构:
+![frame](framework.png)
 
 * 部署架构
 
