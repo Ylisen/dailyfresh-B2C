@@ -33,6 +33,7 @@ dailyfresh mall based on B2C model
 
 
 ####  数据库表
+![DB](DBtables.png)
 
 #### 功能模块展示
 [点击] 多图预警!
