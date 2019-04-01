@@ -46,7 +46,7 @@ dailyfresh mall based on B2C model
 
 #### 功能与性能优化
 1. 用户注册发激活邮件时，可能发送邮件所需的时间较长，客户端会需要等待，用户体验不好。     
- > 把耗时的任务放到后台异步执行，此处使用celery任务队列,其中使用redis作中间件。  
+ > 把耗时的任务放到后台异步执行，此处使用celery任务队列, 其中使用redis作中间件。  
 2. redis存储用户历史浏览记录, 采用list数据结构: History_用户id: [skuid1,skuid2,skuid3]
 3. 使用redis存储用户购物车商品信息，采用hash数据结构: cart_userid: {'sku_id1': num, 'sku_id2': num}   
 
