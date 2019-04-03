@@ -21,6 +21,7 @@ dailyfresh mall based on B2C model
 ![frame](framework.png)
 
 * 部署架构
+Nginx+uwsgi
 
 
 ####  主体模块  
