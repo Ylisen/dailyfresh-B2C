@@ -20,7 +20,7 @@ dailyfresh mall based on B2C model
 采用BS结构, 即Browser/Server(浏览器/服务器)结构,构建一个web的网站商城系统, 其架构逻辑:   
 ![frame](framework.png)
 
-* 部署架构
+* 部署架构     
 Nginx+uwsgi
 
 
