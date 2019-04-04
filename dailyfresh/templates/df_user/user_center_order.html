@@ -1,0 +1,112 @@
+{% extends 'base_user_center.html' %}
+{% load staticfiles %}
+{% block right_content %}
+    <div class="right_content clearfix">
+        {% csrf_token %}
+        <h3 class="common_title2">全部订单</h3>
+
+        {% for order in order_page %}
+        <ul class="order_list_th w978 clearfix">
+            <li class="col01">{{ order.create_time }}</li>
+            <li class="col02">订单号：{{ order.order_id }}</li>
+            <li class="col02 stress">{{ order.status_name }}</li>
+        </ul>
+
+        <table class="order_list_table w980">
+            <tbody>
+                <tr>
+                    <td width="55%">
+                        {% for order_sku in order.order_skus %}
+                        <ul class="order_goods_list clearfix">
+                            <li class="col01"><img src="{{ order_sku.sku.image.url }}"></li>
+                            <li class="col02">{{ order_sku.sku.name }}<em>{{ order_sku.price }}元/{{ order_sku.sku.unite }}</em></li>
+                            <li class="col03">{{ order_sku.count }}</li>
+                            <li class="col04">{{ order_sku.amount }}元</li>
+                        </ul>
+                        {% endfor %}
+                    </td>
+                    <td width="15%">{{ order.total_price |add:order.transit_price }}(含运费:{{ order.transit_price }})元</td>
+                    <td width="15%">{{ order.status_name }}</td>
+                    <td width="15%"><a href="javascript:;" order_id="{{ order.order_id }}" status="{{ order.order_status }}" class="oper_btn">去付款</a></td>
+                </tr>
+            </tbody>
+        </table>
+        {% endfor %}
+
+        <div class="pagenation">
+            {% if order_page.has_previous %}
+                <a href="{% url 'user:order' order_page.previous_page_number %}"> < 上一页</a>
+            {% endif %}
+            {% for pindex in pages %}
+                {% if pindex == order_page.number %}
+                    <a href="{% url 'user:order' pindex %}" class="active">{{ pindex }}</a>
+                {% else %}
+                    <a href="{% url 'user:order' pindex %}">{{ pindex }}</a>
+                {% endif %}
+            {% endfor %}
+            {% if order_page.has_next %}
+                <a href="{% url 'user:order' order_page.next_page_number %}">下一页></a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock right_content %}
+
+{% block bottomfiles %}
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script>
+        $('.oper_btn').each(function () {
+            // 获取status
+            status = $(this).attr('status')
+            if (status == 1){
+                $(this).text('去支付')
+            }
+            else if (status == 4){
+                $(this).text('去评价')
+            }
+            else if (status == 5){
+                $(this).text('已完成')
+            }
+        })
+
+
+        $('.oper_btn').click(function () {
+            // 获取status
+            status = $(this).attr('status')
+            // 获取订单id
+            order_id = $(this).attr('order_id')
+            if (status == 1){
+                // 进行支付
+                csrf = $('input[name="csrfmiddlewaretoken"]').val()
+                // 组织参数
+                params = {'order_id': order_id, 'csrfmiddlewaretoken': csrf}
+                // 发起ajax post请求, 访问/order/pay, 传递参数:order_id
+                $.post('{% url 'order:pay' %}', params, function (data) {
+                    if (data.res == 3){
+                        // 引导用户到支付页面
+                        window.open(data.pay_url)
+                        // 浏览器访问order/check,获取支付交易结果
+                        // ajax post  传递参数:order_id
+                        $.post('/order/check', params, function () {
+                            if (data.res == 3){
+                                alert('支付成功')
+                                //重新加载
+                                location.reload()
+                            }
+                            else{
+                                alert(data.errmsg)
+                            }
+                        })
+                    }
+                    else{
+                        alert(data.errmsg)
+                    }
+                })
+            }
+            else if (status == 4){
+                //其他情况
+                // 跳转到评价页面
+                location.href = "/order/comment/"+order_id
+            }
+        })
+    </script>
+{% endblock bottomfiles %}

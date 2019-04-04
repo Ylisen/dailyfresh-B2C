@@ -1,0 +1,195 @@
+{% extends 'df_goods/base_detail_list.html' %}
+{% load staticfiles %}
+{% block title %}天天生鲜-商品详情{% endblock title %}
+{% block main_content %}
+	<div class="breadcrumb">
+		<a href="#">全部分类</a>
+		<span>></span>
+		<a href="#">{{ sku.type.name }}</a>
+		<span>></span>
+		<a href="#">商品详情</a>
+	</div>
+
+	<div class="goods_detail_con clearfix">
+		<div class="goods_detail_pic fl"><img src="{{ sku.image.url }}"></div>
+
+		<div class="goods_detail_list fr">
+			<h3>{{ sku.name }}</h3>
+			<p>{{ sku.desc }}</p>
+			<div class="prize_bar">
+				<span class="show_pirze">¥<em>{{ sku.price }}</em></span>
+				<span class="show_unit">单  位：{{ sku.unite }}</span>
+			</div>
+			<div class="goods_num clearfix">
+				<div class="num_name fl">数 量：</div>
+				<div class="num_add fl">
+					<input type="text" class="num_show fl" value="1">
+					<a href="javascript:;" class="add fr">+</a>
+					<a href="javascript:;" class="minus fr">-</a>	
+				</div> 
+			</div>
+            <div>
+                <div>其他规格:</div>
+                <div>
+                    {% for sku in same_spu_skus %}
+                        <a href="{% url 'goods:detail' sku.id %}">{{ sku.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+			<div class="total">总价：<em>{{ sku.price }}元</em></div>
+            {% csrf_token %}
+			<div class="operate_btn">
+				<a href="javascript:;" class="buy_btn">立即购买</a>
+				<a href="javascript:;" class="add_cart"  sku_id="{{ sku.id }}"  id="add_cart">加入购物车</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="main_wrap clearfix">
+		<div class="l_wrap fl clearfix">
+			<div class="new_goods">
+				<h3>新品推荐</h3>
+				<ul>
+                    {% for sku in new_skus %}
+					<li>
+						<a href="{% url 'goods:detail' sku.id %}"><img src="{{ sku.image.url }}"></a>
+						<h4><a href="{% url 'goods:detail' sku.id %}">{{ sku.name }}</a></h4>
+						<div class="prize">￥{{ sku.price }}</div>
+					</li>
+                    {% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="r_wrap fr clearfix">
+			<ul class="detail_tab clearfix">
+				<li class="active" id="tag_detail">商品介绍</li>
+				<li id="tag_comment">评论</li>
+			</ul>
+
+			<div class="tab_content" id="tab_detail">
+				<dl>
+					<dt>商品详情：</dt>
+					<dd>{{ sku.goods.detail|safe }}</dd>
+				</dl>
+			</div>
+
+            <div class="tab_content" id="tab_comment" style="display: none;">
+				<dl>
+                    {% for sku in sku_orders %}
+                        <dt>评论时间: {{ sku.update_time }} 用户名:{{ sku.order.user.username }}</dt>
+                        <dd>评论内容: {{ sku.comment }}</dd>
+                    {% empty %}
+                        暂时没有评论信息
+                    {% endfor %}
+				</dl>
+			</div>
+
+		</div>
+	</div>
+{% endblock main_content %}
+{% block bottom %}
+	<div class="add_jump"></div>
+{% endblock bottom %}
+{% block bottomfiles %}
+	<script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+	<script type="text/javascript">
+      // 商品介绍与评论tag的切换
+      $('#tag_detail').click(function () {
+          $('#tag_comment').removeClass('active')
+          $(this).addClass('active')
+          $('#tab_detail').show()
+          $('#tab_comment').hide()
+      })
+
+      $('#tag_comment').click(function () {
+          $('#tag_detail').removeClass('active')
+          $(this).addClass('active')
+          $('#tab_comment').show()
+          $('#tab_detail').hide()
+      })
+
+
+       // 计算商品的小计
+        function update_sku_amount() {
+            count = $('.num_show').val();
+            price = $('.show_pirze').children('em').text();
+            // 计算小计
+            amount = parseFloat(price) * parseInt(count);
+            // 设置商品的小计
+            $('.total').children('em').text(amount.toFixed(2)+'元');
+
+        }
+       // 商品数量增加
+        $('.add').click(function () {
+            // 获取商品的数量
+            count = $('.num_show').val();
+            // 增加1
+            count = parseInt(count)+1;
+            // 重新设置商品的数量
+            $('.num_show').val(count);
+
+            // 重新计算小计
+            update_sku_amount()
+
+        });
+        // 商品数量减少
+       $('.minus').click(function () {
+           count = $('.num_show').val();
+           count = parseInt(count)-1;
+           if (count <= 0) {
+               count = 1;
+           }
+           $('.num_show').val(count);
+
+           update_sku_amount();
+       });
+       // 手动输入
+       $('.num_show').blur(function () {
+           count = $(this).val();
+           // 校验count 是否合法
+           if (isNaN(count) || count.trim().length == 0 || parseInt(count)<=0){
+                count = 1;
+           }
+           $('.num_show').val(parseInt(count));
+           update_sku_amount();
+       });
+
+		// 获取add_cart a标签左上角的坐标
+		var $add_x = $('#add_cart').offset().top;
+		var $add_y = $('#add_cart').offset().left;
+
+        // 获取show_count div元素左上角的坐标
+		var $to_x = $('#show_count').offset().top;
+		var $to_y = $('#show_count').offset().left;
+
+			$('#add_cart').click(function(){
+            // 获取商品id和商品数目
+            count = $('.num_show').val()
+            sku_id = $(this).attr('sku_id') // prop attr
+            csrf = $('input[name="csrfmiddlewaretoken"]').val()
+            // 组织参数
+            params = {'sku_id':sku_id, 'count':count, 'csrfmiddlewaretoken':csrf}
+            // 发起ajax post请求，访问/cart/add, 传递参数:sku_id count
+            $.post('{% url 'cart:add' %}', params, function (data) {
+                if (data.res == 5){
+                    // 添加成功
+                    $(".add_jump").css({'left':$add_y+80,'top':$add_x+10,'display':'block'})
+                    $(".add_jump").stop().animate({
+                    'left': $to_y+7,
+                    'top': $to_x+7},
+                    "fast", function() {
+                        $(".add_jump").fadeOut('fast',function(){
+                            // 重新设置用户购物车中商品的条目数
+                            $('#show_count').html(data.cart_count);
+                        });
+			        });
+                }
+                else{
+                    alert(data.errmsg)
+                }
+            })
+
+		})
+	</script>
+{% endblock bottomfiles %}
