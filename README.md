@@ -12,7 +12,8 @@ dailyfresh mall based on B2C model
 - 任务队列(异步处理): celery(django-celery)   
 - 分布式文件存储: FastDFS
 - 搜索引擎(商品检索)：  haystack(django-haystack)、whoosh、二次开发   
-- web服务器配置: Nginx+ uwsgi    
+- web服务器配置: Nginx+ uwsgi   
+- 开发环境： PyCharm、Linux、vim
 
 
 #### 技术架构
