@@ -21,8 +21,8 @@ dailyfresh mall based on B2C model
 ![frame](Readme/framework.png)
 
 * 部署架构     
-Nginx+uwsgi
-![deploy](Readme/deploy.PNG)
+Nginx+uwsgi     
+![deploy](Readme/deploy.png)
 
 
 ####  主体模块  
@@ -42,7 +42,7 @@ Nginx+uwsgi
 例如纺织品中一个SKU通常表示：规格、颜色、款式。
 
 
-#### 功能模块展示
+#### 功能模块展示      
 [点击( 多图预警!)] (Readme)
 
 
