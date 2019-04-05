@@ -44,7 +44,7 @@ Nginx+uwsgi
 
 
 #### 功能模块展示      
-[点击] (Readme/show.md)
+[点击] (www.baidu.com)
 
 
 #### 功能与性能优化
