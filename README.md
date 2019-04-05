@@ -44,7 +44,7 @@ Nginx+uwsgi
 
 
 #### 功能模块展示      
-[sf](Readme/show.md)
+[点击查看--多图预警](Readme/show.md)
 
 
 #### 功能与性能优化
