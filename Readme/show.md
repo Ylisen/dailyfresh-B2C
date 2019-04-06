@@ -1,11 +1,11 @@
 ## 商品相关模块
 * 首页    
 登录、注册后默认跳转到首页    
-![indext](indext.PNG)
+![index](image/index.PNG)
 
 * 商品详情页   
 点击商品进入到商品详情    
-![detail](detail.PNG)
+![detail](image/detail.PNG)
 
 * 商品列表页    
 选择商品分类或查看更多时，跳转到商品列表    
