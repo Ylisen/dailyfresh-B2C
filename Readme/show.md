@@ -1,4 +1,4 @@
-## 商品相关模块
+#### 商品相关模块
 * 首页    
 登录、注册后默认跳转到首页    
 ![index](image/index.PNG)
@@ -16,7 +16,7 @@
 ![search_list](search_list.PNG)
    
        
-## 用户模块    
+#### 用户模块    
 * 注册    
 ![register](register.PNG)   
               
@@ -29,11 +29,11 @@
 ![user_center_address](user_center_address.PNG)
   
 
-## 购物车模块    
+#### 购物车模块    
 ![cart](cart.PNG)
   
          
-## 订单模块相关    
+#### 订单模块相关    
 ![pay_order](pay_order.PNG)
 ![pay](pay.PNG)
 ![to_pay](to_pay.PNG)
