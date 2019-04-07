@@ -9,16 +9,16 @@
                    
 * 商品列表页    
 选择商品分类或查看更多时，跳转到商品列表    
-![list](Readme/list.PNG)
+![list](image/list.PNG)
                   
 * 其他    
 搜索-搜索结果显示    
-![search_list](Readme/search_list.PNG)
+![search_list](image/search_list.PNG)
    
        
 #### 用户模块    
 * 注册    
-![register](register.PNG)   
+![register](image/register.PNG)   
               
 * 登录    
 ![login](login.PNG)
