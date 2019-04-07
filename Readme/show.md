@@ -9,11 +9,11 @@
                    
 * 商品列表页    
 选择商品分类或查看更多时，跳转到商品列表    
-![list](list.PNG)
+![list](Readme/list.PNG)
                   
 * 其他    
 搜索-搜索结果显示    
-![search_list](search_list.PNG)
+![search_list](Readme/search_list.PNG)
    
        
 #### 用户模块    
