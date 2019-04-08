@@ -21,12 +21,12 @@
 ![register](image/register.PNG)   
               
 * 登录    
-![login](login.PNG)
+![login](image/login.PNG)
             
 * 用户中心       
-![user_center_info](user_center_info.PNG)
-![user_center_order](user_center_order.PNG)
-![user_center_address](user_center_address.PNG)
+![user_center_info](image/user_center_info.PNG)
+![user_center_order](image/user_center_order.PNG)
+![user_center_address](image/user_center_address.PNG)
   
 
 #### 购物车模块    
