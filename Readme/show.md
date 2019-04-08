@@ -21,25 +21,25 @@
 ![register](image/register.PNG)   
               
 * 登录    
-![login](image/login.PNG)
+![login](image/login.PNG) 
             
-* 用户中心       
-![user_center_info](image/user_center_info.PNG)
-![user_center_order](image/user_center_order.PNG)
-![user_center_address](image/user_center_address.PNG)
+* 用户中心        
+![user_center_info](image/user_center_info.PNG)   
+![user_center_order](image/user_center_order.PNG)   
+![user_center_address](image/user_center_address.PNG)    
   
 
-#### 购物车模块    
-![cart](cart.PNG)
+#### 购物车模块     
+![cart](cart.PNG)    
   
          
 #### 订单模块相关    
-![pay_order](pay_order.PNG)
-![pay](pay.PNG)
-![to_pay](to_pay.PNG)
-![pay_finish](pay_finish.PNG)
-![pay_comment](pay_comment.PNG)
-![order_finish](order_finish.PNG)
+![pay_order](pay_order.PNG)   
+![pay](pay.PNG)   
+![to_pay](to_pay.PNG)    
+![pay_finish](pay_finish.PNG)   
+![pay_comment](pay_comment.PNG)    
+![order_finish](order_finish.PNG)     
 
 
 
