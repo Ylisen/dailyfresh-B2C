@@ -34,7 +34,7 @@
   
          
 #### 订单模块相关    
-![pay_order](pay_order.PNG)   
+![pay_order](image/pay_order.PNG)   
 ![pay](pay.PNG)   
 ![to_pay](to_pay.PNG)    
 ![pay_finish](pay_finish.PNG)   
