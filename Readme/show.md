@@ -24,7 +24,7 @@
 ![login](image/login.PNG) 
             
 * 用户中心    
-用户中心分三个子模块: 
+用户中心分三个子模块: 个人信息、订单、地址    
 ![user_center_info](image/user_center_info.PNG)   
 ![user_center_order](image/user_center_order.PNG)   
 ![user_center_address](image/user_center_address.PNG)    
