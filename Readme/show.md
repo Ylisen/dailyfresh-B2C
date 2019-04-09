@@ -30,7 +30,7 @@
   
 
 #### 购物车模块     
-![cart](cart.PNG)    
+![cart](image/cart.PNG)    
   
          
 #### 订单模块相关    
