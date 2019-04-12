@@ -1,1 +1,25 @@
 
+查看Django版本
+python -m django --version
+
+创建Django项目
+django-admin startproject projectname
+
+创建app应用
+python manage.py startapp appname
+
+启动开发服务器
+python manage.py runserver
+
+为模型的改变生成迁移文件。
+ python manage.py makemigrations 
+应用数据库迁移
+python manage.py migrate 
+
+创建一个管理员账号
+python manage.py createsuperuser
+
+> 
+[staticfiles]
+    collectstatic     # 收集静态文件到到指定文件夹,用于部署前
+    findstatic    # 查询项目中的静态文件
