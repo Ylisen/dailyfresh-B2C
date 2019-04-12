@@ -19,7 +19,7 @@ python manage.py migrate
 创建一个管理员账号
 python manage.py createsuperuser
 
-> 
+
 [staticfiles]
     collectstatic     # 收集静态文件到到指定文件夹,用于部署前
     findstatic    # 查询项目中的静态文件
