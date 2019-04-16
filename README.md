@@ -64,5 +64,7 @@ Nginx+uwsgi
 * Nginx    
 [https://nginx.org/download/](https://nginx.org/download/)    
 * fastdfs-nginx-module   
-[https://github.com/happyfish100/fastdfs-nginx-module/releases](https://github.com/happyfish100/fastdfs-nginx-module/releases)
+[https://github.com/happyfish100/fastdfs-nginx-module/releases](https://github.com/happyfish100/fastdfs-nginx-module/releases)   
+* 支付宝api    
+[https://open.alipay.com/platform/home.htm](https://open.alipay.com/platform/home.htm)          
 
