@@ -60,7 +60,9 @@ Nginx+uwsgi
 
 #### 相关链接      
 * Libfastcommon: 安装FastDFS之前要先安装它的依赖库libfastcommon    
-[https://github.com/happyfish100/libfastcommon/releases](https://github.com/happyfish100/libfastcommon/releases)      
+[https://github.com/happyfish100/libfastcommon/releases](https://github.com/happyfish100/libfastcommon/releases)   
+* FastDFS   
+[https://github.com/happyfish100/FastDFS](https://github.com/happyfish100/FastDFS)
 * Nginx    
 [https://nginx.org/download/](https://nginx.org/download/)    
 * fastdfs-nginx-module   
