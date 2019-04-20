@@ -58,7 +58,7 @@ Nginx+uwsgi
 7. 订单并发
 
 
-#### 相关链接      
+#### Links      
 * Libfastcommon: 安装FastDFS之前要先安装它的依赖库libfastcommon    
 [https://github.com/happyfish100/libfastcommon/releases](https://github.com/happyfish100/libfastcommon/releases)   
 * FastDFS   
