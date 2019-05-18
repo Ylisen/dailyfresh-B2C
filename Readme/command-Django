@@ -164,3 +164,4 @@ python manage.py shell
 {{ "a b c d e f g h i j k"|wordwrap:"5" }} 每指定数量的字符就插入回车符
 {{ boolean|yesno:"Yes,No,Perhaps" }} 对三种值的返回字符串，对应是 非空,空,None
 
+
