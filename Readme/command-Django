@@ -42,9 +42,8 @@ python manage.py shell
 [staticfiles]
     collectstatic     # 收集静态文件到到指定文件夹,用于部署前
     findstatic    # 查询项目中的静态文件
-    
-    
-    
+
+_________________    
 #### 过滤器
 一、形式：小写
 {{ name | lower }}
