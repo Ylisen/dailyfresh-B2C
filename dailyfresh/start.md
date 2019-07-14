@@ -38,39 +38,39 @@ select 1
 keys *
  hgetall cart_2
 --------------------------------
-【celery】启动异步注册任务
-虚拟环境
-开启worker,     (退出 deactivate)
-workon df-env
+# 【celery】启动异步注册任务
+#### 虚拟环境   
+开启worker,     (退出 deactivate)     
+workon df-env    
 
-在项目目录下执行：cd /opt/dailyfresh-celerytasks
-celery -A celery_tasks.tasks worker -Q queue --loglevel=info
-或
-celery -A celery_tasks.tasks worker --loglevel=info
-----------------------------------------------
-【FastDFS】启动分布式文件存储系统
-# 启动fastdfs服务命令如下：
-service fdfs_trackerd start
-service fdfs_storaged start
-
-# 测试Tracker 和 Storage 服务通信
-/usr/bin/fdfs_monitor /etc/fdfs/storage.conf
-
-#查看服务
-netstat -unltp|grep fdfs 
-
--------
-【nginx】
-# 启动nginx
-cd /usr/local/nginx/sbin/
-./nginx 
-
- #查看nginx服务
-ps aux|grep nginx  
+在项目目录下执行：cd /opt/dailyfresh-celerytasks    
+celery -A celery_tasks.tasks worker -Q queue --loglevel=info     
+或     
+celery -A celery_tasks.tasks worker --loglevel=info     
 
 
+# 【FastDFS】启动分布式文件存储系统
+##### 启动fastdfs服务命令如下：   
+service fdfs_trackerd start   
+service fdfs_storaged start   
 
---------------------------------------
+#### 测试Tracker 和 Storage 服务通信       
+/usr/bin/fdfs_monitor /etc/fdfs/storage.conf     
+
+#### 查看服务    
+netstat -unltp|grep fdfs     
+
+
+# 【nginx】   
+#### 启动nginx   
+cd /usr/local/nginx/sbin/   
+./nginx   
+
+ ##### 查看nginx服务   
+ps aux|grep nginx    
+
+
+
 
 
 
