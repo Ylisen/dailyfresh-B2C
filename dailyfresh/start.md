@@ -61,12 +61,12 @@ workon df-env
 netstat -unltp|grep fdfs     
 
 
-# nginx   
+#### nginx   
 #### 启动nginx   
 cd /usr/local/nginx/sbin/   
 ./nginx   
 
- #### 查看nginx服务   
+#### 查看nginx服务   
 ps aux|grep nginx    
 
 
