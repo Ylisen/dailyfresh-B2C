@@ -14,19 +14,19 @@ pip install -r requirements.txt
 建立索引数据  
 python manage.py rebuild_index
 
-#### Linux
-【mysql】
-mysql -uroot -p    
-password: Mathkk123+-     
+#### Linux    
+mysql    
+mysql -uroot -p     
+password: Mathkk123+-      
 
 查看运行状态     
 systemctl status mysqld.service     
 
 
-【redis】    
+redis    
 检查端口： netstat -ltnp |grep 6379    
-启动：service redisd start    
-关闭：service redisd stop    
+启动：  service redisd start      
+关闭：  service redisd stop      
 
 可进入终端    
 cd /usr/local/redis-5.0-rc3/src    
@@ -34,11 +34,11 @@ cd /usr/local/redis-5.0-rc3/src
 查看库  
 select 1
 所有数据   
-keys * hgetall cart_2
+keys * hgetall cart_2    
 
 
 
-#### 【celery】启动异步注册任务
+#### celery启动异步注册任务
 #### 虚拟环境   
 开启worker,     (退出 deactivate)     
 workon df-env    
@@ -49,7 +49,7 @@ workon df-env
 ```celery -A celery_tasks.tasks worker --loglevel=info ```    
 
 
-# 【FastDFS】启动分布式文件存储系统
+##### FastDFS启动分布式文件存储系统
 ##### 启动fastdfs服务命令如下：   
 ```service fdfs_trackerd start```   
 ```service fdfs_storaged start```   
@@ -61,12 +61,12 @@ workon df-env
 netstat -unltp|grep fdfs     
 
 
-# 【nginx】   
+# nginx   
 #### 启动nginx   
 cd /usr/local/nginx/sbin/   
 ./nginx   
 
- ##### 查看nginx服务   
+ #### 查看nginx服务   
 ps aux|grep nginx    
 
 
