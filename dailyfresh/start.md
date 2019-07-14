@@ -5,10 +5,10 @@
 workon df-env (退出 deactivate)     
 
 #### requirements.txt用来记录项目所有的依赖包和版本号:     
-pip freeze >requirements.txt    
+```pip freeze >requirements.txt```    
 
 安装requirement.txt:    
-pip install -r requirements.txt  
+```pip install -r requirements.txt```  
 
 
 建立索引数据  
