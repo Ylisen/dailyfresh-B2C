@@ -14,6 +14,7 @@ workon df-env (退出 deactivate)
 建立索引数据  
 python manage.py rebuild_index
 
+----
 ### Linux    
 #### mysql    
 mysql -uroot -p     
