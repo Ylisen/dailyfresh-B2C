@@ -1,6 +1,6 @@
 amqp==2.4.2
 billiard==3.5.0.5
-celery==4.2.1
+celery==5.2.2
 certifi==2019.3.9
 chardet==3.0.4
 Django==2.1.7
